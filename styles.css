@@ -1,0 +1,276 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --greenBlue: #007d7b;
+    --black: #000000;
+    --white: #ffffff;
+}
+body {
+    background-color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--greenBlue);
+    width: 80%;
+    height: 3em;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+section.gallery {
+    width: 85%;
+}
+footer {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 6rem;
+    width: 85%;
+    background-color: var(--black);
+    position: relative;
+    left: 10px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+ul li {
+    display: flex;
+    align-items: center;
+    margin: 0 9px;
+}
+a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5em;
+}
+[href="#top"] {
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    background-color: var(--black);
+}
+.intro {
+    padding: 0 9px 0 9px;
+}
+.intro p:last-of-type {
+    align-self: flex-start;
+}
+.gallery {
+    margin-bottom: 20px;
+}
+.gallery figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+figure {
+    position: relative;
+    margin-top: 20px;
+}
+figcaption {
+    position: absolute;
+    top: 12px;
+    font-weight: 600;
+}
+figure:nth-child(2), 
+figure:last-child {
+    color: var(--white);
+}
+figure:nth-child(1) figcaption,
+figure:nth-child(3) figcaption,
+figure:nth-child(7) figcaption {
+    color: var(--white);
+    position: absolute;
+    top: 87%;
+}
+figure:nth-child(6) figcaption {
+    position: absolute;
+    top: 94%;
+}
+img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+form > label {
+    align-self:flex-start;
+    position: relative;
+    right: 35%;
+}
+p {
+    font-size: 1.25em;
+}
+figcaption, label, input, small {
+    font-size: 1em;
+}
+h1 {
+    font-size: 8vw;
+}
+h2 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+h1, h2, nav li, figcaption, label, [type="submit"], footer
+{
+    text-transform: uppercase;
+}
+::placeholder {
+    text-transform: uppercase;
+    color: var(--greenBlue);
+    font-weight: 700;
+}
+input:not([type="submit"]) {
+    width: 180%;
+    height: 2.5em;
+}
+input[type="submit"] {
+    background-color: var(--greenBlue);
+    color: var(--white);
+    width: 120%;
+    height:2em;
+    border: none;
+    border-radius: 15px;
+    margin: 12px 0 60px 0;
+    font-weight: 700;
+}
+input[type="submit"]:hover {
+    background-color: goldenrod;
+}
+.contact-info, footer {
+    background-color: var(--black);
+    color: var(--white);
+}
+.contact-info {
+    padding-top: 20px;
+}
+.contact-info > p {
+    margin: 20px 0 30px 0;
+    width: 85%;
+    text-align: center;
+}
+input {
+    margin-bottom: 20px;
+}
+/******************** Breakpoint ***********************/
+@media (min-width:485px) {
+    h1 {
+        font-size: 8vw;
+    }
+}
+@media (min-width:566px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+/******************** Breakpoint ***********************/
+@media (min-width:880px) {
+    h1 {
+        font-size: 3em;
+    }
+    header {
+        justify-content: start;
+        padding-left: 6px;
+    }
+    header, main {
+        width: 80%;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 12px;
+        margin-top: 15px;
+    }
+    section.gallery {
+        width: 98%;
+    }
+    figure {
+        margin-top: 0;
+    }
+    figure:nth-child(3) {
+        align-self: baseline;
+    }
+    input:not([type="submit"]) {
+        width: 340%;
+    }
+    input[type="submit"] {
+        width: 200%;
+    }
+    form > label {
+        right: 115%;
+    }
+}
+/******************** Breakpoint ***********************/
+@media (min-width:1300px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    nav {
+        justify-content: end;
+        padding-right: 15px;
+        left: -0.25%;
+    }
+    section.gallery {
+        width: 98%;
+    }
+    input:not([type="submit"]) {
+        width: 490%;
+    }
+    input[type="submit"] {
+        width: 300%;
+    }
+    form > label {
+        right: 190%;
+    }
+}
+
