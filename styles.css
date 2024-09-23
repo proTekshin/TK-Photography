@@ -47,7 +47,7 @@ section {
     justify-content: center;
     width: 100%;
 }
-section.gallery {
+div.gallery {
     width: 85%;
 }
 footer {
@@ -230,7 +230,7 @@ input {
         grid-gap: 12px;
         margin-top: 15px;
     }
-    section.gallery {
+    div.gallery {
         width: 98%;
     }
     figure {
@@ -260,7 +260,7 @@ input {
         padding-right: 15px;
         left: -0.25%;
     }
-    section.gallery {
+    div.gallery {
         width: 98%;
     }
     input:not([type="submit"]) {
